@@ -1,0 +1,94 @@
+>>> make str
+swig -c++ -perl -outdir generated_files -o generated_files/STDLib_wrap.cpp swig/STDLib.i
+g++ -c -Wno-literal-suffix -D_REENTRANT -D_GNU_SOURCE -DPERL_USE_SAFE_PUTENV -fno-strict-aliasing -pipe -fstack-protector -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -fPIC -m64 -I /opt/perl_5.18.2/linux50_64/lib/CORE/ generated_files/STDLib_wrap.cpp -I cpp/ -o generated_files/obj/STDLib_wrap.o
+g++ -shared generated_files/obj/str.o generated_files/obj/STDLib_wrap.o -o generated_files/STDLib.so -L/opt/perl_5.18.2/linux50_64/lib/CORE -lperlifx
+perl perl/str.pl
+
+[PERL CODE]:	perl code started here
+[PERL CODE]:	 ==============================
+[PERL CODE]:	 ==============================  read global variable STDLib::moduleName 
+
+[PERL CODE]:	 STDLib::moduleName = STDLib
+[PERL CODE]:	 STDLib::moduleName = STD_LIB
+[PERL CODE]:	 ==============================  read CONST global variable STDLib::fileName 
+
+[PERL CODE]:	 STDLib::fileName = str.h
+[PERL CODE]:	 STDLib::fileName = str.h
+[PERL CODE]:	 ==============================  STDLib::UpdateStr("{My PERL text}") 
+
+[C++ Code], [STR]::UpdateStr(), started.
+
+[C++ Code], [STR]::UpdateStr(), , perltxt = {My PERL text}
+
+[C++ Code], [STR]::UpdateStr(), , cpptxt = {C++ received the ${My PERL text}}
+
+[C++ Code], [STR]::UpdateStr(),  exited.
+
+[PERL CODE]:	 returned cpptxt = {C++ received the ${My PERL text}}
+[PERL CODE]:	 ==============================  STDLib::PrintStr("{My PERL text}") 
+
+[C++ Code], [STR]::PrintStr(), started.
+
+[C++ Code], [STR]::PrintStr(), , perltxt = {My PERL text}
+
+[C++ Code], [STR]::PrintStr(),  exited.
+
+[PERL CODE]:	 ==============================  STDLib::changePerlStr("{My PERL text-2}") 
+
+[PERL CODE]:	 my  perltxt2 = {My PERL text-2}
+[PERL CODE]:	 ==============================  STDLib::changePerlStrPtr("{My PERL text-2}") 
+
+[PERL CODE]:	 my  perltxt2 = {My PERL text-2}
+
+[C++ Code], [STR]::changePerlStrPtr(), started.
+
+[C++ Code], [STR]::changePerlStrPtr(), , perlstrRef = {My PERL text-2}
+
+[C++ Code], [STR]::changePerlStrPtr(),  exited.
+
+[PERL CODE]:	 returned cpptxt2 = {C++ received the ${My PERL text-2}}
+
+[PERL CODE]:	 after STDLib::changePerlStr()-  perltxt2 = {My PERL text-2}
+
+[PERL CODE]:	 ==============================  my s1 = new STDLib::StrTest() and s1->{m_perltxt}
+
+[C++ Code], [STR]::StrTest(), started.[0x11fbc00]
+
+[C++ Code], [STR]::StrTest(), , m_perltxt = Default StrTest String
+
+[C++ Code], [STR]::StrTest(), exited.
+
+[PERL CODE]:	 ==============================  s1->{m_perltxt} 
+
+[PERL CODE]:	 s1->m_perltxt = Default StrTest String
+[PERL CODE]:	 s1->m_perltxt = new PERL String
+[PERL CODE]:	 ==============================  cpptxt = s1->UpdateStr(perltxt); 
+
+[C++ Code], [STR]::UpdateStr(), started.[0x11fbc00]
+
+[C++ Code], [STR]::UpdateStr(), , perltxt = {My PERL text}
+
+[C++ Code], [STR]::UpdateStr(), , cpptxt =   [C++ received the #{My PERL text} ] 
+
+[C++ Code], [STR]::UpdateStr(), exited.
+
+[PERL CODE]:	 returned cpptxt =   [C++ received the #{My PERL text} ] 
+[PERL CODE]:	 ==============================  STDLib::StrTest::m_fileName 
+
+[PERL CODE]:	 STDLib::StrTest::m_fileName = 
+
+[PERL CODE]:	 STDLib::StrTest::m_fileName = str.cpp
+
+[PERL CODE]:	 ==============================
+
+[PERL CODE]:	 perl code ended here
+
+
+[PERL CODE]:	 ==============================
+
+[C++ Code], [STR]::~StrTest(), started.[0x11fbc00]
+
+[C++ Code], [STR]::~StrTest(), , m_perltxt = {My PERL text}
+
+[C++ Code], [STR]::~StrTest(), exited.
+>>> 

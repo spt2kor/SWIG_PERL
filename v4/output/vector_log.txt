@@ -1,0 +1,86 @@
+>>> make vec
+perl perl/vector.pl
+
+[PERL CODE]:	perl code started here
+[PERL CODE]:	 ==============================
+[PERL CODE]:	 ==============================  create STDLib::vectori 
+
+[PERL CODE]:	 vi1 = STDLib::vectori=HASH(0x1928770)
+
+[PERL CODE]:	 vi1.size() = 5
+
+[PERL CODE]:	 ==============================  add values to vector 
+
+[PERL CODE]:	 ==============================  print vector 
+
+[PERL CODE]:	1 , value = 6
+[PERL CODE]:	2 , value = 7
+[PERL CODE]:	3 , value = 8
+[PERL CODE]:	4 , value = 9
+[PERL CODE]:	5 , value = 10
+
+[PERL CODE]:	 ==============================  print vector 
+
+[PERL CODE]:	1 , value = 6
+[PERL CODE]:	2 , value = 7
+[PERL CODE]:	3 , value = 8
+[PERL CODE]:	4 , value = 9
+[PERL CODE]:	5 , value = 10
+
+[PERL CODE]:	 ==============================   double average(std::vector<int> v); 
+
+[C++ Code], [VECTOR]::average(), started.
+
+[C++ Code], [VECTOR]::average(),  exited.
+
+[PERL CODE]:	 average(vi1) = 8
+
+[PERL CODE]:	 ==============================   std::vector<double> half(const std::vector<double>& v) ; 
+
+[PERL CODE]:	 ==============================  print vector 
+
+[PERL CODE]:	1 , value = 21
+[PERL CODE]:	2 , value = 22
+[PERL CODE]:	3 , value = 23
+[PERL CODE]:	4 , value = 24
+[PERL CODE]:	5 , value = 25
+
+[C++ Code], [VECTOR]::half(), started.
+
+[C++ Code], [VECTOR]::half(),  exited.
+
+[PERL CODE]:	 ==============================   void halve_in_place(std::vector<double>& v) ; 
+
+[PERL CODE]:	 ==============================  print vector 
+
+[PERL CODE]:	1 , value = 11
+[PERL CODE]:	2 , value = 12
+[PERL CODE]:	3 , value = 13
+[PERL CODE]:	4 , value = 14
+[PERL CODE]:	5 , value = 15
+
+[C++ Code], [VECTOR]::halve_in_place(), started.
+
+[C++ Code], [VECTOR]::halve_in_place(),  exited.
+
+[PERL CODE]:	 ==============================  print vector 
+
+[PERL CODE]:	1 , value = 5.5
+[PERL CODE]:	2 , value = 6
+[PERL CODE]:	3 , value = 6.5
+[PERL CODE]:	4 , value = 7
+[PERL CODE]:	5 , value = 7.5
+
+[PERL CODE]:	 ==============================   passing PERL array's ; 
+
+[PERL CODE]:	 arr1 = 20304050
+
+[PERL CODE]:	 ==============================   passing PERL's List  ; 
+
+[PERL CODE]:	 ==============================
+
+[PERL CODE]:	 perl code ended here
+
+
+[PERL CODE]:	 ==============================
+>>> 

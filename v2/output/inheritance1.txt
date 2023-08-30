@@ -1,0 +1,38 @@
+rajput@vihlc1771[FAST2/v2]{master} make clean
+rm -f generated_files/obj/Pointer1.o generated_files/obj/Singleton.o generated_files/obj/Pointer.o generated_files/obj/Shape.o generated_files/obj/SimpleDS.o  generated_files/obj/DataTypes.o  
+rm -f generated_files/obj/SimpleDS_wrap.o generated_files/SimpleDS.so generated_files/SimpleDS_wrap.cpp generated_files/SimpleDS.pm 
+rm -f generated_files/obj/inheritance1.o
+rm -f generated_files/INHRT.so generated_files/inheritance1_wrap.cpp generated_files/obj/inheritance1_wrap.o generated_files/inheritance1.pm 
+rajput@vihlc1771[FAST2/v2]{master} make inh1
+swig -c++ -perl -outdir generated_files -o generated_files/inheritance1_wrap.cpp swig/inheritance1.i
+g++ -c -Wno-literal-suffix -D_REENTRANT -D_GNU_SOURCE -DPERL_USE_SAFE_PUTENV -fno-strict-aliasing -pipe -fstack-protector -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -fPIC -m64 -I /opt/perl_5.18.2/linux50_64/lib/CORE/ generated_files/inheritance1_wrap.cpp -I cpp/ -o generated_files/obj/inheritance1_wrap.o
+g++ -c -D_REENTRANT -D_GNU_SOURCE -DPERL_USE_SAFE_PUTENV -fno-strict-aliasing -pipe -fstack-protector -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -fPIC -m64  cpp/inheritance1.cpp -o generated_files/obj/inheritance1.o
+g++ -shared generated_files/obj/inheritance1_wrap.o generated_files/obj/inheritance1.o -o generated_files/INHRT.so -L/opt/perl_5.18.2/linux50_64/lib/CORE -lperlifx
+perl perl/inheritance1.pl
+
+[PERL CODE]:	perl code started here
+[PERL CODE]:	 ==============================
+[PERL CODE]:	Alice is a CEO
+Just call her "CEO Alice"
+----------------------
+New employee added.   Current employees are:
+  Employee Bob
+  Employee Jane
+  Manager Ted
+  CEO Alice
+----------------------
+(position, title) for items 0-3:
+  Employee, "Employee Bob"
+  Employee, "Employee Jane"
+  Manager, "Manager Ted"
+  CEO, "CEO Alice"
+----------------------
+~EmployeeList, deleting 4 employees.
+~Employee() @ 0x1a49c20
+~Employee() @ 0x182da00
+~Employee() @ 0x1a22b20
+~Employee() @ 0x182d8b0
+~EmployeeList empty.
+----------------------
+perl exit
+rajput@vihlc1771[FAST2/v2]{master} 
